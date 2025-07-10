@@ -1,0 +1,77 @@
+.multi-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.multi-dropdown-selector {
+  padding: 10px 14px;
+  background: #fff;
+  border: 1.5px solid #888;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  font-size: 15px;
+}
+
+.multi-dropdown-selector:hover {
+  border-color: #007bff;
+}
+
+.multi-dropdown-menu,
+.sub-menu {
+  list-style: none; /* ✅ Remove bullet points */
+  padding-left: 0;
+  margin: 0;
+}
+
+.multi-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  width: 100%;
+}
+
+.dropdown-item {
+  position: relative;
+  padding: 10px 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: -2px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 180px;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover > .sub-menu {
+  display: block;
+}
+
+.right-sub-menu {
+  left: 100%;
+  top: 0;
+}

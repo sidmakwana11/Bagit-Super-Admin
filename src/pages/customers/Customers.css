@@ -1,0 +1,54 @@
+.Customers-container {
+    padding: 30px;
+    background-color: #f9f9f9;
+  }
+  
+  .Customers-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .Customers-table-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customer-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .customer-table th,
+  .customer-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #444;
+  }
+  
+  .customer-table th {
+    background-color: #f0f0f0;
+    color: #555;
+  }
+  
+  .status {
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    width: fit-content;
+  }
+  
+  .status.active {
+    color: green;
+    background-color: #d4f4d4;
+  }
+  
+  .status.inactive {
+    color: red;
+    background-color: #fbdcdc;
+  }
+  
