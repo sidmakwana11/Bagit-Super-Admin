@@ -13,7 +13,7 @@ const Customers = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:5002/api/user/all", {
+      const res = await fetch("https://bagit-user-auth-service.onrender.com/api/user/all", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -53,7 +53,7 @@ const Customers = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`http://localhost:5002/api/user/${customerId}`, {
+          const res = await fetch(`https://bagit-user-auth-service.onrender.com/api/user/${customerId}`, {
             method: "DELETE",
             headers: {
               Authorization: `Bearer ${token}`,
