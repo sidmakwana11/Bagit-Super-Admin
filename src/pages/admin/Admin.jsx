@@ -14,7 +14,7 @@ const Admin = () => {
   const fetchAdmins = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/approved`, {
+      const res = await fetch(`https://bagit-admin-service.onrender.com/api/admin/approved`, {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -63,7 +63,7 @@ const Admin = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`http://localhost:5000/api/admin/${adminId}`, {
+          const res = await fetch(`https://bagit-admin-service.onrender.com/api/admin/${adminId}`, {
             method: "DELETE",
             headers: {
               Authorization: `Bearer ${token}`,
