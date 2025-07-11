@@ -10,17 +10,17 @@ const CategoryDropdown = ({ onSelect }) => {
   const [selectedText, setSelectedText] = useState("Select Category");
 
   useEffect(() => {
-    fetch("http://localhost:5003/api/categories")
+    fetch("https://bagit-category-service.onrender.com/api/categories")
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
         data.forEach((cat) => {
-          fetch(`http://localhost:5003/api/subcategories/byCategory/${cat.category}`)
+          fetch(`https://bagit-category-service.onrender.com/api/subcategories/byCategory/${cat.category}`)
             .then((res) => res.json())
             .then((sub) => {
               setSubCategories(prev => ({ ...prev, [cat.category]: sub }));
               sub.forEach((s) => {
-                fetch(`http://localhost:5003/api/subsubcategories/byCatSubCat?category=${cat.category}&subCategory=${s.subCategory}`)
+                fetch(`https://bagit-category-service.onrender.com/api/subsubcategories/byCatSubCat?category=${cat.category}&subCategory=${s.subCategory}`)
                   .then((res) => res.json())
                   .then((subsub) => {
                     setSubSubCategories(prev => ({ ...prev, [s.subCategory]: subsub }));
