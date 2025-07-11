@@ -15,7 +15,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:5001/api/products");
+        const res = await fetch("https://bagit-product-service.onrender.com/api/products");
         const data = await res.json();
         setAllProducts(data);
         setFilteredProducts(data);
@@ -47,7 +47,7 @@ const Products = () => {
       });
 
       if (result.isConfirmed) {
-        const res = await fetch(`http://localhost:5001/api/products/${id}`, {
+        const res = await fetch(`https://bagit-product-service.onrender.com/api/products/${id}`, {
           method: 'DELETE',
         });
 
