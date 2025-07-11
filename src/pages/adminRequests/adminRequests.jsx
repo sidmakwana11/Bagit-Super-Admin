@@ -8,7 +8,7 @@ const AdminRequests = () => {
 
   const fetchRequests = async () => {
     const token = localStorage.getItem("token"); // make sure you stored it at login
-    const res = await fetch('http://localhost:5000/api/admin/pending', {
+    const res = await fetch('https://bagit-admin-service.onrender.com/api/admin/pending', {
       headers: {
         Authorization: `Bearer ${token}`,
       }
@@ -26,7 +26,7 @@ const AdminRequests = () => {
 
   const handleAccept = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/approve/${id}`, {
+      const res = await fetch(`https://bagit-admin-service.onrender.com/api/admin/approve/${id}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`, // include token
@@ -47,7 +47,7 @@ const AdminRequests = () => {
   
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/${id}`, {
+      const res = await fetch(`https://bagit-admin-service.onrender.com/api/admin/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
